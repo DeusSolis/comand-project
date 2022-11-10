@@ -7,17 +7,24 @@
 Ніхто не проти? function_1 - буде декоратором.
 
 """
-def function_1():
+# створюємо декоратор
+def func_print(func):
 
-    pass
+    def wrapper():
+        print('результат виконання функції {0}  = {1}'.format(func.__name__, func()))
 
+    return wrapper
+
+
+@func_print
 def function_2():
     pass
 
-def functuin_3():
+@func_print
+def function_3():
     pass
 
 
 
-if __name__='__main__':
-    pass
+if __name__ == '__main__':
+    function_3()
