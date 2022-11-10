@@ -24,7 +24,10 @@ def function_2():
 def function_3():
     pass
 
-
+def html_special_chars(data):
+    """Функція яка перетворює 'потенційно небезпечні символи :)' """
+    a = {"<" : "&lt;",">" : "&gt;","\"": "&quot;","&" : "&amp;"}
+    return "".join((a.get(i,i)) for i in data)
 
 if __name__ == '__main__':
     function_3()
